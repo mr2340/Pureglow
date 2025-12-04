@@ -1,0 +1,1800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure Glow Sparkles | Radiance Redefined</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Discover organic, cruelty-free skincare at Pure Glow Sparkles. Radiance redefined with natural ingredients for glowing skin.">
+    <meta name="keywords" content="skincare, organic skincare, natural beauty, glow, radiance, vitamin c serum, moisturizer, pure glow">
+    <meta name="author" content="Pure Glow Sparkles">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Pure Glow Sparkles | Radiance Redefined">
+    <meta property="og:description" content="Organic, cruelty-free formulations designed to hydrate, nourish, and illuminate your skin naturally.">
+    <meta property="og:image" content="image.png">
+    <meta property="og:url" content="https://pureglowsparkles.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pure Glow Sparkles | Radiance Redefined">
+    <meta name="twitter:description" content="Organic, cruelty-free formulations designed to hydrate, nourish, and illuminate your skin naturally.">
+    <meta name="twitter:image" content="image.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://pureglowsparkles.com">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        /* --- CSS Variables & Design System --- */
+        :root {
+            /* Palette - Light Theme Default */
+            --color-primary: #ec4899;      /* Pink 500 */
+            --color-primary-dark: #db2777; /* Pink 600 */
+            --color-primary-light: #fbcfe8;/* Pink 200 */
+            --color-bg: #fdf2f8;           /* Pink 50 */
+            --color-bg-card: #ffffff;
+            --color-text-main: #1f1f1f;
+            --color-text-muted: #6b7280;
+            --color-border: #f3f4f6;
+            --color-nav-bg: rgba(255, 255, 255, 0.85);
+            --color-nav-border: rgba(255, 255, 255, 0.3);
+            
+            /* Typography */
+            --font-sans: 'Inter', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+
+            /* Spacing & Layout */
+            --container-width: 1200px;
+            --header-height: 80px;
+            --announcement-height: 40px;
+            --radius-md: 8px;
+            --radius-lg: 16px;
+            --radius-full: 9999px;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Dark Mode Overrides */
+        [data-theme="dark"] {
+            --color-bg: #121212;
+            --color-bg-card: #1e1e1e;
+            --color-text-main: #f3f4f6;
+            --color-text-muted: #9ca3af;
+            --color-border: #333333;
+            --color-nav-bg: rgba(18, 18, 18, 0.85);
+            --color-nav-border: rgba(255, 255, 255, 0.1);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+            --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+        }
+
+        /* --- Reset & Base Styles --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text-main);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            padding-top: var(--announcement-height);
+        }
+
+        a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+        button { border: none; background: none; cursor: pointer; font-family: inherit; color: inherit; }
+        input { font-family: inherit; }
+
+        /* --- Utilities --- */
+        .container { max-width: var(--container-width); margin: 0 auto; padding: 0 20px; }
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--color-text-main);
+        }
+        .text-center { text-align: center; }
+        .hidden { display: none !important; }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            gap: 0.5rem;
+        }
+        .btn-primary {
+            background-color: var(--color-text-main);
+            color: var(--color-bg);
+            box-shadow: var(--shadow-md);
+        }
+        .btn-primary:hover {
+            background-color: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        .btn-secondary { background-color: transparent; border: 2px solid white; color: white; }
+        .btn-secondary:hover { background-color: rgba(255,255,255,0.1); backdrop-filter: blur(4px); }
+        .btn-outline {
+            border: 1px solid var(--color-border);
+            background: var(--color-bg-card);
+            color: var(--color-text-muted);
+        }
+        .btn-outline:hover, .btn-outline.active {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+            background: rgba(236, 72, 153, 0.1);
+        }
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            border: none;
+        }
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            color: white;
+        }
+
+        /* --- Announcement Bar --- */
+        .announcement-bar {
+            position: fixed; top: 0; left: 0; width: 100%; height: var(--announcement-height);
+            background: var(--color-primary-dark); color: white;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.85rem; font-weight: 500; z-index: 1001;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .announcement-close { position: absolute; right: 20px; color: rgba(255,255,255,0.7); font-size: 1.1rem; }
+
+        /* --- Navigation --- */
+        .navbar {
+            position: fixed;
+            top: var(--announcement-height); left: 0; width: 100%;
+            height: var(--header-height);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            background: var(--color-nav-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--color-nav-border);
+        }
+        .navbar.scrolled { box-shadow: var(--shadow-sm); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; height: 100%; }
+        
+        .logo { display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; cursor: pointer; }
+        .logo i { color: var(--color-primary); }
+        
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { font-size: 0.95rem; font-weight: 500; color: var(--color-text-main); }
+        .nav-links a:hover { color: var(--color-primary); }
+
+        .nav-icons { display: flex; gap: 0.75rem; align-items: center; }
+        .nav-icon-btn { font-size: 1.25rem; position: relative; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.3s; }
+        .nav-icon-btn:hover { background: rgba(0,0,0,0.05); color: var(--color-primary); }
+        
+        /* Search Bar */
+        .search-container {
+            display: flex;
+            align-items: center;
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-full);
+            padding: 0.3rem 0.8rem;
+            margin-right: 0.5rem;
+        }
+        .search-input {
+            border: none;
+            outline: none;
+            background: transparent;
+            color: var(--color-text-main);
+            padding: 0.2rem;
+            font-size: 0.9rem;
+            width: 150px;
+            transition: width 0.3s;
+        }
+        .search-input:focus { width: 200px; }
+        .search-input::placeholder { color: var(--color-text-muted); }
+
+        .badge {
+            position: absolute; top: 2px; right: 2px;
+            background-color: var(--color-primary); color: white;
+            font-size: 0.65rem; width: 16px; height: 16px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700;
+        }
+
+        .mobile-toggle { display: none; font-size: 1.5rem; }
+
+        /* Weather Widget (New) */
+        .weather-widget {
+            display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; 
+            padding: 0.3rem 0.8rem; background: var(--color-bg); border-radius: 20px;
+            border: 1px solid var(--color-border);
+        }
+        .weather-widget i { color: gold; }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative; height: 85vh; min-height: 600px;
+            display: flex; align-items: center; overflow: hidden;
+        }
+        .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(253, 10, 131, 0.719)40%, transparent), url('image1.png'); background-size: cover; background-position: center; z-index: -2; }
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.2)); z-index: -1; }
+        .hero-content { color: white; max-width: 600px; animation: fadeInUp 1s ease-out; }
+        .hero-tag {
+            display: inline-block; padding: 0.25rem 0.75rem;
+            background: rgba(255,255,255,0.2); backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.3); border-radius: var(--radius-full);
+            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem;
+        }
+        .hero-title { font-family: var(--font-serif); font-size: 4rem; line-height: 1.1; margin-bottom: 1.5rem; }
+        .hero-title span { color: var(--color-primary-light); font-style: italic; }
+        .hero-desc { font-size: 1.1rem; color: rgba(255,255,255,0.9); margin-bottom: 2rem; max-width: 450px; }
+
+        /* --- Flash Sale --- */
+        .flash-sale {
+            background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+            color: white; padding: 3rem 0; text-align: center;
+        }
+        .flash-timer {
+            display: flex; justify-content: center; gap: 2rem; margin-top: 1.5rem; font-family: var(--font-serif);
+        }
+        .timer-unit { display: flex; flex-direction: column; align-items: center; }
+        .timer-val { font-size: 2.5rem; font-weight: 700; line-height: 1; }
+        .timer-label { font-size: 0.8rem; text-transform: uppercase; opacity: 0.8; margin-top: 0.5rem; font-family: var(--font-sans); }
+
+        /* --- Routine Builder (New) --- */
+        .routine-wrapper {
+            background: var(--color-bg); padding: 3rem 0; border-bottom: 1px solid var(--color-border);
+        }
+        .routine-toggle {
+            display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem;
+        }
+        .routine-btn {
+            background: transparent; border: 2px solid var(--color-border); color: var(--color-text-muted);
+            padding: 0.8rem 2rem; border-radius: var(--radius-full); font-weight: 600; cursor: pointer; transition: all 0.3s;
+        }
+        .routine-btn.active {
+            background: var(--color-text-main); color: white; border-color: var(--color-text-main);
+        }
+        .routine-steps {
+            display: flex; gap: 2rem; overflow-x: auto; padding-bottom: 1rem; scrollbar-width: none;
+        }
+        .routine-steps::-webkit-scrollbar { display: none; }
+        .routine-step {
+            min-width: 250px; text-align: center; position: relative;
+        }
+        .routine-icon {
+            width: 80px; height: 80px; background: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; color: var(--color-primary); margin: 0 auto 1rem;
+            box-shadow: var(--shadow-md); border: 1px solid var(--color-border);
+        }
+        .step-number {
+            position: absolute; top: 0; right: 80px; width: 25px; height: 25px;
+            background: var(--color-text-main); color: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold;
+        }
+
+        /* --- Ingredient Glossary (New) --- */
+        .glossary-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;
+        }
+        .ingredient-card {
+            background: var(--color-bg-card); padding: 1.5rem; border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border); transition: all 0.3s; cursor: pointer;
+        }
+        .ingredient-card:hover { transform: translateY(-5px); border-color: var(--color-primary); }
+        .ing-name { font-weight: 700; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: space-between; }
+        .ing-desc { font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5; }
+
+        /* --- Before & After Slider --- */
+        .comparison-container {
+            position: relative; max-width: 800px; margin: 0 auto;
+            border-radius: var(--radius-lg); overflow: hidden;
+            aspect-ratio: 16/9; box-shadow: var(--shadow-lg);
+            cursor: col-resize;
+        }
+        .comp-img {
+            width: 100%; height: 100%; object-fit: cover;
+            position: absolute; top: 0; left: 0; pointer-events: none;
+        }
+        .comp-img-before { z-index: 1; width: 50%; border-right: 2px solid white; overflow: hidden; }
+        .comp-slider-handle {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 40px; height: 40px; background: white; border-radius: 50%;
+            z-index: 10; display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow-md); color: var(--color-primary); pointer-events: none;
+        }
+        .comp-label {
+            position: absolute; top: 20px; padding: 5px 15px;
+            background: rgba(0,0,0,0.6); color: white; border-radius: 20px;
+            font-size: 0.8rem; font-weight: 600; text-transform: uppercase;
+        }
+        .label-before { left: 20px; z-index: 2; }
+        .label-after { right: 20px; z-index: 0; }
+
+        /* --- Products --- */
+        .shop-section { padding: 5rem 0; background: linear-gradient(to bottom, var(--color-bg), var(--color-bg-card)); }
+        .filters { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 2rem; }
+        
+        .product-card {
+            background: var(--color-bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex; flex-direction: column;
+        }
+        .product-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-5px); }
+        .product-image-wrapper { position: relative; aspect-ratio: 4/5; background: #2a2a2a; overflow: hidden; cursor: pointer; }
+        .product-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .product-card:hover .product-img { transform: scale(1.05); }
+        
+        .product-tag {
+            position: absolute; top: 10px; left: 10px;
+            background: rgba(255,255,255,0.9); color: #000;
+            padding: 4px 10px; font-size: 0.7rem; font-weight: 700;
+            text-transform: uppercase; border-radius: var(--radius-full); z-index: 2;
+        }
+
+        .btn-icon-float {
+            position: absolute; width: 40px; height: 40px;
+            background: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow-md); opacity: 0;
+            transition: all 0.3s ease; color: #1f1f1f; z-index: 2;
+        }
+        .btn-quick-add { bottom: 15px; right: 15px; transform: translateY(10px); }
+        .btn-wishlist-card { top: 10px; right: 10px; transform: translateY(-10px); }
+        
+        .product-card:hover .btn-icon-float { opacity: 1; transform: translateY(0); }
+        .btn-icon-float:hover { background: var(--color-primary); color: white; }
+        .btn-wishlist-card.active { color: var(--color-primary); opacity: 1; transform: translateY(0); }
+
+        .product-info { padding: 1.25rem; display: flex; flex-direction: column; flex-grow: 1; }
+        .product-title { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--color-text-main); }
+        .product-rating { display: flex; gap: 2px; color: #fbbf24; font-size: 0.8rem; margin-bottom: 0.5rem; }
+        .product-meta { margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-weight: 500; color: var(--color-text-muted); }
+
+        /* --- Testimonials --- */
+        .testimonials-wrapper {
+            display: flex; overflow-x: auto; gap: 2rem; padding: 2rem 0;
+            scroll-snap-type: x mandatory; scrollbar-width: none;
+        }
+        .testimonials-wrapper::-webkit-scrollbar { display: none; }
+        .testimonial-card {
+            min-width: 300px; max-width: 400px;
+            background: var(--color-bg-card); padding: 2rem; border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border); scroll-snap-align: center;
+            display: flex; flex-direction: column; gap: 1rem;
+        }
+        .testimonial-text { font-style: italic; color: var(--color-text-main); font-size: 1.1rem; font-family: var(--font-serif); }
+        .testimonial-author { display: flex; align-items: center; gap: 1rem; margin-top: auto; }
+        .author-img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+
+        /* --- Instagram Feed --- */
+        .insta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0; }
+        .insta-item { position: relative; aspect-ratio: 1; overflow: hidden; group:hover; cursor: pointer; }
+        .insta-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .insta-item:hover .insta-img { transform: scale(1.1); }
+        .insta-overlay {
+            position: absolute; inset: 0; background: rgba(0,0,0,0.4);
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; transition: opacity 0.3s ease; color: white; font-size: 2rem;
+        }
+        .insta-item:hover .insta-overlay { opacity: 1; }
+
+        /* --- FAQ & Blog --- */
+        .accordion-item { border-bottom: 1px solid var(--color-border); }
+        .accordion-header {
+            width: 100%; padding: 1.5rem 0; display: flex; justify-content: space-between; align-items: center;
+            font-weight: 600; font-size: 1.1rem; color: var(--color-text-main); cursor: pointer;
+        }
+        .accordion-content {
+            max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;
+            color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6;
+        }
+        .accordion-content p { padding-bottom: 1.5rem; }
+        .accordion-item.active .accordion-icon { transform: rotate(180deg); }
+
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .blog-card { border-radius: var(--radius-lg); overflow: hidden; background: var(--color-bg-card); border: 1px solid var(--color-border); transition: transform 0.3s ease; }
+        .blog-card:hover { transform: translateY(-5px); }
+        .blog-img { width: 100%; height: 200px; object-fit: cover; }
+        .blog-content { padding: 1.5rem; }
+        .blog-date { font-size: 0.8rem; color: var(--color-primary); font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem; display: block; }
+        .blog-title { font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 0.5rem; font-weight: 600; }
+
+        /* --- Cart, Modal, Overlay --- */
+        .overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 2000;
+            opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+        }
+        .overlay.active { opacity: 1; pointer-events: auto; }
+
+        .cart-sidebar {
+            position: fixed; top: 0; right: 0; height: 100%; width: 100%; max-width: 400px;
+            background: var(--color-bg-card); z-index: 2001;
+            transform: translateX(100%); transition: transform 0.3s ease;
+            display: flex; flex-direction: column; box-shadow: -5px 0 25px rgba(0,0,0,0.3);
+        }
+        .cart-sidebar.active { transform: translateX(0); }
+        .cart-header { padding: 1.5rem; border-bottom: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center; }
+        .cart-items { flex: 1; overflow-y: auto; padding: 1.5rem; }
+        .cart-item { display: flex; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px dashed var(--color-border); }
+        .cart-item-img { width: 70px; height: 70px; border-radius: var(--radius-md); object-fit: cover; background: #f0f0f0; }
+        .cart-item-info { flex: 1; }
+        .cart-controls { display: flex; align-items: center; justify-content: space-between; margin-top: 0.5rem; }
+        .qty-control { display: flex; align-items: center; border: 1px solid var(--color-border); border-radius: var(--radius-full); padding: 2px 8px; }
+        .cart-footer { padding: 1.5rem; background: var(--color-bg); border-top: 1px solid var(--color-border); }
+        
+        /* Shipping Options */
+        .shipping-options { margin-bottom: 1rem; }
+        .shipping-option {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-md);
+            margin-bottom: 0.5rem; cursor: pointer; transition: all 0.2s;
+        }
+        .shipping-option:hover { background: var(--color-bg); }
+        .shipping-option.selected { border-color: var(--color-primary); background: rgba(236, 72, 153, 0.05); }
+        .shipping-radio { margin-right: 0.5rem; accent-color: var(--color-primary); }
+
+        /* Modals Generic */
+        .modal {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px);
+            z-index: 3000; display: flex; align-items: center; justify-content: center;
+            opacity: 0; pointer-events: none; transition: opacity 0.3s ease; padding: 20px;
+        }
+        .modal.active { opacity: 1; pointer-events: auto; }
+        .modal-content {
+            background: var(--color-bg-card); width: 100%; max-width: 900px;
+            border-radius: var(--radius-lg); overflow: hidden;
+            box-shadow: var(--shadow-lg); position: relative; transform: scale(0.95); transition: transform 0.3s ease;
+        }
+        .modal.active .modal-content { transform: scale(1); }
+        
+        /* Product Modal Specifics */
+        .product-modal-grid { display: grid; grid-template-columns: 1fr 1fr; }
+        .modal-img { height: 100%; width: 100%; object-fit: cover; }
+        .modal-details { padding: 3rem; display: flex; flex-direction: column; justify-content: center; }
+        .modal-close { position: absolute; top: 15px; right: 15px; font-size: 1.5rem; color: var(--color-text-muted); z-index: 10; background: rgba(255,255,255,0.8); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
+
+        /* Quiz Modal */
+        .quiz-container { padding: 2rem; text-align: center; max-width: 600px; margin: 0 auto; }
+        .quiz-step { display: none; animation: fadeIn 0.3s ease; }
+        .quiz-step.active { display: block; }
+        .quiz-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin-top: 2rem; }
+        .quiz-option-card {
+            border: 2px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem;
+            cursor: pointer; transition: all 0.3s;
+        }
+        .quiz-option-card:hover, .quiz-option-card.selected { border-color: var(--color-primary); background: var(--color-bg); }
+        .quiz-icon { font-size: 2.5rem; color: var(--color-primary); margin-bottom: 0.5rem; }
+
+        /* Tracking & Account Modal */
+        .simple-modal-body { padding: 2rem; max-width: 500px; margin: 0 auto; }
+        .track-timeline { margin-top: 2rem; position: relative; border-left: 2px solid var(--color-border); margin-left: 10px; padding-left: 20px; }
+        .track-step { margin-bottom: 1.5rem; position: relative; }
+        .track-step::before {
+            content: ''; position: absolute; left: -26px; top: 5px; width: 10px; height: 10px;
+            border-radius: 50%; background: var(--color-border);
+        }
+        .track-step.completed::before { background: var(--color-primary); }
+        .track-step.completed .track-title { color: var(--color-primary); }
+
+        /* --- Newsletter --- */
+        .newsletter { background: var(--color-text-main); color: var(--color-bg); padding: 5rem 0; text-align: center; position: relative; overflow: hidden; }
+        .newsletter-sparkle { position: absolute; color: rgba(255,255,255,0.1); pointer-events: none; }
+        .newsletter-form { display: flex; gap: 0.5rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap; }
+        .newsletter-input { padding: 1rem 1.5rem; border-radius: var(--radius-full); border: none; width: 300px; outline: none; }
+
+        /* --- AI Chat Widget --- */
+        .ai-chat-btn {
+            position: fixed; bottom: 30px; left: 30px;
+            width: 60px; height: 60px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            border-radius: 50%; box-shadow: var(--shadow-hover);
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 2rem; z-index: 5000;
+            cursor: pointer; transition: transform 0.3s ease;
+        }
+        .ai-chat-btn:hover { transform: scale(1.1); }
+        .ai-chat-btn.active { transform: rotate(45deg); }
+
+        .ai-chat-widget {
+            position: fixed; bottom: 100px; left: 30px;
+            width: 350px; height: 500px; max-height: 80vh;
+            background: var(--color-bg-card);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            z-index: 4999;
+            display: flex; flex-direction: column;
+            overflow: hidden;
+            transform: translateY(20px); opacity: 0; pointer-events: none;
+            transition: all 0.3s ease; border: 1px solid var(--color-border);
+        }
+        .ai-chat-widget.active { transform: translateY(0); opacity: 1; pointer-events: auto; }
+
+        .chat-header {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            color: white; padding: 1rem; display: flex; align-items: center; gap: 0.5rem;
+        }
+        .chat-messages {
+            flex: 1; padding: 1rem; overflow-y: auto; background: var(--color-bg);
+            display: flex; flex-direction: column; gap: 1rem;
+        }
+        .message {
+            max-width: 85%; padding: 0.8rem 1rem; font-size: 0.9rem; line-height: 1.4;
+        }
+        .msg-bot {
+            align-self: flex-start; background: white; border-radius: 12px 12px 12px 0;
+            border: 1px solid var(--color-border); color: var(--color-text-main);
+        }
+        .msg-user {
+            align-self: flex-end; background: var(--color-primary-dark);
+            border-radius: 12px 12px 0 12px; color: white;
+        }
+        .chat-input-area {
+            padding: 1rem; background: var(--color-bg-card); border-top: 1px solid var(--color-border);
+            display: flex; gap: 0.5rem;
+        }
+        .chat-input {
+            flex: 1; padding: 0.8rem; border: 1px solid var(--color-border);
+            border-radius: var(--radius-full); outline: none; background: var(--color-bg);
+            color: var(--color-text-main);
+        }
+        .chat-send {
+            width: 40px; height: 40px; background: var(--color-primary); color: white;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+        }
+        
+        .product-recommendation {
+            display: flex; gap: 0.5rem; background: var(--color-bg); 
+            padding: 0.5rem; border-radius: var(--radius-md); 
+            border: 1px solid var(--color-border); margin-top: 0.5rem; cursor: pointer;
+        }
+        .product-recommendation img { width: 40px; height: 40px; border-radius: 4px; object-fit: cover; }
+
+        /* --- WhatsApp Floating Button --- */
+        .whatsapp-float {
+            position: fixed; bottom: 100px; right: 30px;
+            width: 50px; height: 50px;
+            background-color: #25d366; color: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 2px 2px 3px rgba(0,0,0,0.2); z-index: 1000;
+            font-size: 1.8rem; transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover { background-color: #128C7E; transform: translateY(-3px); }
+
+        /* --- Toast, Cookie, ScrollTop --- */
+        .toast {
+            position: fixed; top: 100px; right: 20px; background: var(--color-bg-card);
+            padding: 1rem 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-lg);
+            display: flex; align-items: center; gap: 1rem; z-index: 4000;
+            transform: translateX(200%); transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-left: 4px solid var(--color-primary); border: 1px solid var(--color-border);
+        }
+        .toast.active { transform: translateX(0); }
+        
+        .cookie-banner {
+            position: fixed; bottom: 20px; left: 20px; right: 20px; max-width: 400px;
+            background: var(--color-bg-card); padding: 1.5rem; border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg); z-index: 5000; border: 1px solid var(--color-border);
+            display: none; animation: slideUp 0.5s ease;
+        }
+        .cookie-banner.show { display: block; }
+        .cookie-actions { display: flex; gap: 1rem; margin-top: 1rem; }
+
+        .scroll-top {
+            position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
+            background: var(--color-primary); color: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow-md); z-index: 1000; opacity: 0; pointer-events: none;
+            transition: all 0.3s ease; cursor: pointer; font-size: 1.5rem;
+        }
+        .scroll-top.show { opacity: 1; pointer-events: auto; }
+
+        /* --- Responsive --- */
+        @media (max-width: 968px) {
+            .hero-title { font-size: 3rem; }
+            .product-modal-grid { grid-template-columns: 1fr; max-height: 90vh; overflow-y: auto; }
+            .modal-img { height: 250px; }
+            .modal-details { padding: 2rem; }
+        }
+        @media (max-width: 768px) {
+            :root { --header-height: 70px; }
+            .nav-links {
+                position: fixed; top: calc(var(--header-height) + var(--announcement-height)); left: 0; width: 100%;
+                background: var(--color-bg-card); flex-direction: column; align-items: center;
+                padding: 2rem; gap: 2rem; box-shadow: var(--shadow-lg);
+                transform: translateY(-150%); transition: transform 0.3s ease; z-index: 999;
+            }
+            .nav-links.active { transform: translateY(0); }
+            .mobile-toggle { display: block; }
+            .hero-content { text-align: center; margin: 0 auto; }
+            .hero-title { font-size: 2.5rem; }
+            .search-container { display: none; }
+            .flash-timer { gap: 1rem; }
+            .timer-val { font-size: 1.8rem; }
+            .insta-grid { grid-template-columns: repeat(3, 1fr); }
+            .ai-chat-btn { left: 20px; bottom: 20px; width: 50px; height: 50px; font-size: 1.5rem; }
+            .ai-chat-widget { width: calc(100% - 40px); left: 20px; bottom: 80px; height: 60vh; }
+            .whatsapp-float { bottom: 90px; right: 20px; width: 50px; height: 50px; }
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body data-theme="light">
+
+    <!-- Announcement Bar -->
+    <div id="announcement-bar" class="announcement-bar">
+        <span><i class="ph-fill ph-truck" style="margin-right: 5px;"></i> Free Shipping on orders over ₦50,000</span>
+        <button class="announcement-close" onclick="document.getElementById('announcement-bar').style.display='none'; document.body.style.paddingTop='0'; document.getElementById('navbar').style.top='0';"><i class="ph-bold ph-x"></i></button>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast">
+        <i class="ph-fill ph-check-circle" style="color: var(--color-primary); font-size: 1.5rem;"></i>
+        <div>
+            <h4 style="font-weight: 700; font-size: 0.9rem;">Success</h4>
+            <p id="toast-message" style="font-size: 0.8rem; color: var(--color-text-muted);">Action completed</p>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/2348000000000" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+        <i class="ph-fill ph-whatsapp-logo"></i>
+    </a>
+
+    <!-- AI Chat Widget -->
+    <div class="ai-chat-btn" onclick="toggleAIChat()">
+        <i class="ph-fill ph-sparkle"></i>
+    </div>
+    <div class="ai-chat-widget" id="ai-chat">
+        <div class="chat-header">
+            <i class="ph-fill ph-robot"></i>
+            <div>
+                <h4 style="font-size: 0.9rem; font-weight: 700;">Glow AI</h4>
+                <p style="font-size: 0.7rem; opacity: 0.9;">Skin Consultant</p>
+            </div>
+            <button onclick="toggleAIChat()" style="margin-left: auto; color: white;"><i class="ph ph-x"></i></button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message msg-bot">
+                Hello! I'm your Glow AI. Tell me about your skin (e.g., "dry", "acne", "dull") and I'll explain why it happens and how to fix it!
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" class="chat-input" placeholder="Describe your skin..." onkeypress="if(event.key === 'Enter') sendChatMessage()">
+            <button class="chat-send" onclick="sendChatMessage()"><i class="ph-bold ph-paper-plane-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <button class="mobile-toggle" id="mobile-menu-btn"><i class="ph ph-list"></i></button>
+
+            <div class="logo" onclick="window.scrollTo(0,0)">
+                <i class="ph-fill ph-sparkle"></i>
+                <span>Pure Glow.</span>
+            </div>
+
+            <div class="nav-links" id="nav-links">
+                <a href="#home">Home</a>
+                <a href="#products">Shop</a>
+                <a href="#benefits">Benefits</a>
+                <a href="#journal">Journal</a>
+                <a href="#" onclick="openTrackOrder()">Track Order</a>
+                <div class="weather-widget" id="weather-widget">
+                    <i class="ph-fill ph-sun"></i>
+                    <span>Lagos 32°C</span>
+                </div>
+            </div>
+
+            <div class="nav-icons">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <i class="ph ph-magnifying-glass" style="color: var(--color-text-muted);"></i>
+                    <input type="text" id="search-input" class="search-input" placeholder="Try 'acne' or 'glow'...">
+                </div>
+
+                <!-- Account / Points -->
+                <button class="nav-icon-btn" onclick="openAccount()" title="Account">
+                    <i class="ph ph-user"></i>
+                    <span id="points-badge" class="badge" style="background: gold; color: black; display: none;">0</span>
+                </button>
+
+                <!-- Theme Toggle -->
+                <button class="nav-icon-btn" onclick="toggleTheme()" title="Toggle Theme">
+                    <i id="theme-icon" class="ph ph-moon"></i>
+                </button>
+                
+                <!-- Wishlist -->
+                <button class="nav-icon-btn" onclick="showToast('Wishlist feature active!', 'heart')">
+                    <i class="ph ph-heart"></i>
+                    <span id="wishlist-count" class="badge" style="opacity: 0;">0</span>
+                </button>
+
+                <!-- Cart -->
+                <button class="nav-icon-btn" onclick="toggleCart()">
+                    <i class="ph ph-shopping-bag"></i>
+                    <span id="cart-count" class="badge" style="opacity: 0;">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Sidebar -->
+    <div class="overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Bag</h2>
+            <button onclick="toggleCart()"><i class="ph ph-x" style="font-size: 1.5rem;"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items-container"></div>
+        <div class="cart-footer">
+            <!-- Shipping Options -->
+            <div class="shipping-options">
+                <p style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Shipping Method</p>
+                <label class="shipping-option selected" onclick="selectShipping('lagos', 2500, this)">
+                    <div style="display:flex; align-items:center;">
+                        <input type="radio" name="shipping" checked class="shipping-radio">
+                        <span>Lagos Delivery</span>
+                    </div>
+                    <span style="font-weight:600;">₦2,500</span>
+                </label>
+                <label class="shipping-option" onclick="selectShipping('nationwide', 4500, this)">
+                    <div style="display:flex; align-items:center;">
+                        <input type="radio" name="shipping" class="shipping-radio">
+                        <span>Nationwide Shipping</span>
+                    </div>
+                    <span style="font-weight:600;">₦4,500</span>
+                </label>
+            </div>
+
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cart-total">₦0.00</span>
+            </div>
+            <button onclick="checkout()" class="btn btn-whatsapp" style="width: 100%; border-radius: 99px; padding: 12px; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <i class="ph-fill ph-whatsapp-logo" style="font-size: 1.2rem;"></i> Order on WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content product-modal-grid">
+            <button class="modal-close" onclick="closeModal('product-modal')"><i class="ph ph-x"></i></button>
+            <div id="modal-img-container"></div>
+            <div class="modal-details">
+                <span class="hero-tag" style="color: var(--color-text-muted); align-self: flex-start; border-color: var(--color-border);" id="modal-tag"></span>
+                <h2 class="section-title" id="modal-title" style="font-size: 2rem; margin-top: 10px;"></h2>
+                <div id="modal-rating" class="product-rating" style="margin-bottom: 1rem; font-size: 1.2rem;"></div>
+                <p style="font-size: 1.5rem; color: var(--color-primary); font-weight: 700; margin-bottom: 1rem;" id="modal-price"></p>
+                <p style="color: var(--color-text-muted); margin-bottom: 2rem;" id="modal-desc">
+                    Enriched with organic botanicals to rejuvenate your skin. This formula is lightweight, non-greasy, and perfect for daily use.
+                </p>
+                <div style="display: flex; gap: 1rem;">
+                    <button class="btn btn-primary" id="modal-add-btn">Add to Cart</button>
+                    <button class="btn btn-outline" id="modal-wishlist-btn"><i class="ph ph-heart"></i> Wishlist</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Modal -->
+    <div class="modal" id="quiz-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('quiz-modal')"><i class="ph ph-x"></i></button>
+            <div class="quiz-container">
+                <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1rem;">Skin Analysis</h2>
+                
+                <!-- Step 1 -->
+                <div class="quiz-step active" id="quiz-step-1">
+                    <h3>What is your primary skin concern?</h3>
+                    <div class="quiz-options">
+                        <div class="quiz-option-card" onclick="handleQuizAnswer(1, 'dry')">
+                            <div class="quiz-icon"><i class="ph-fill ph-drop"></i></div>
+                            <p>Dryness</p>
+                        </div>
+                        <div class="quiz-option-card" onclick="handleQuizAnswer(1, 'acne')">
+                            <div class="quiz-icon"><i class="ph-fill ph-warning-circle"></i></div>
+                            <p>Acne / Oil</p>
+                        </div>
+                        <div class="quiz-option-card" onclick="handleQuizAnswer(1, 'aging')">
+                            <div class="quiz-icon"><i class="ph-fill ph-clock"></i></div>
+                            <p>Fine Lines</p>
+                        </div>
+                        <div class="quiz-option-card" onclick="handleQuizAnswer(1, 'dull')">
+                            <div class="quiz-icon"><i class="ph-fill ph-sun"></i></div>
+                            <p>Dullness</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="quiz-step" id="quiz-step-2">
+                    <h3>How does your skin feel after washing?</h3>
+                    <div class="quiz-options">
+                        <div class="quiz-option-card" onclick="handleQuizAnswer(2, 'tight')">
+                            <div class="quiz-icon"><i class="ph-fill ph-prohibit"></i></div>
+                            <p>Tight / Dry</p>
+                        </div>
+                        <div class="quiz-option-card" onclick="handleQuizAnswer(2, 'normal')">
+                            <div class="quiz-icon"><i class="ph-fill ph-smiley"></i></div>
+                            <p>Comfortable</p>
+                        </div>
+                        <div class="quiz-option-card" onclick="handleQuizAnswer(2, 'oily')">
+                            <div class="quiz-icon"><i class="ph-fill ph-drop-half-bottom"></i></div>
+                            <p>Oily Quickly</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result Step -->
+                <div class="quiz-step" id="quiz-step-result">
+                    <h3 style="color: var(--color-primary);">Your Personal Recommendation</h3>
+                    <p style="margin: 1rem 0; color: var(--color-text-muted);">Based on your answers, we've curated these products for you.</p>
+                    <button class="btn btn-primary" onclick="applyQuizFilter()">See My Routine</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tracking Modal -->
+    <div class="modal" id="track-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('track-modal')"><i class="ph ph-x"></i></button>
+            <div class="simple-modal-body">
+                <h2 style="font-family: var(--font-serif); margin-bottom: 1rem; text-align: center;">Track Order</h2>
+                <div style="display: flex; gap: 0.5rem;">
+                    <input type="text" class="newsletter-input" placeholder="Order ID (e.g. PGS-1024)" style="width: 100%; border: 1px solid var(--color-border);">
+                    <button class="btn btn-primary" onclick="showTrackingStatus()">Track</button>
+                </div>
+                <div id="tracking-result" style="display: none;">
+                    <div class="track-timeline">
+                        <div class="track-step completed">
+                            <h4 class="track-title">Order Placed</h4>
+                            <p style="font-size: 0.8rem; color: var(--color-text-muted);">Oct 24, 10:30 AM</p>
+                        </div>
+                        <div class="track-step completed">
+                            <h4 class="track-title">Processing</h4>
+                            <p style="font-size: 0.8rem; color: var(--color-text-muted);">Oct 24, 02:15 PM</p>
+                        </div>
+                        <div class="track-step completed">
+                            <h4 class="track-title">Shipped (Lagos Hub)</h4>
+                            <p style="font-size: 0.8rem; color: var(--color-text-muted);">Oct 25, 09:00 AM</p>
+                        </div>
+                        <div class="track-step">
+                            <h4 class="track-title">Out for Delivery</h4>
+                            <p style="font-size: 0.8rem; color: var(--color-text-muted);">Expected Today</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Account Modal -->
+    <div class="modal" id="account-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('account-modal')"><i class="ph ph-x"></i></button>
+            <div class="simple-modal-body text-center">
+                <div style="width: 80px; height: 80px; background: var(--color-bg); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: var(--color-primary); font-size: 2rem;">
+                    <i class="ph-fill ph-user"></i>
+                </div>
+                <h2 style="font-family: var(--font-serif); margin-bottom: 0.5rem;">Hello, Glow Getter!</h2>
+                <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Member since 2024</p>
+                
+                <div style="background: var(--color-primary-light); padding: 1.5rem; border-radius: var(--radius-lg); margin-bottom: 2rem;">
+                    <p style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Glow Points</p>
+                    <h1 style="font-size: 3rem; font-weight: 700; color: var(--color-primary-dark); line-height: 1;">350</h1>
+                    <p style="font-size: 0.8rem;">₦500 off your next order</p>
+                </div>
+                
+                <button class="btn btn-outline" style="width: 100%;">View Order History</button>
+                <button class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Redeem Points</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+   <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="hero-content">
+                <span class="hero-tag">New Collection 2025</span>
+                <h1 class="hero-title">Reveal Your <br><span>Inner Radiance</span></h1>
+                <p class="hero-desc">Organic, cruelty-free formulations designed to hydrate, nourish, and illuminate your skin naturally.</p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <button onclick="openQuiz()" class="btn btn-primary" style="background: white; color: black;">Take Skin Quiz</button>
+                    <a href="#products" class="btn btn-secondary">Shop Collection</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flash Sale Section -->
+    <section class="flash-sale">
+        <div class="container">
+            <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 0.5rem;">Sparkle Flash Sale</h2>
+            <p style="opacity: 0.9;">Get 30% off selected items. Offer ends soon!</p>
+            <div class="flash-timer" id="flash-timer">
+                <div class="timer-unit"><span class="timer-val" id="days">00</span><span class="timer-label">Days</span></div>
+                <div class="timer-unit"><span class="timer-val" id="hours">00</span><span class="timer-label">Hours</span></div>
+                <div class="timer-unit"><span class="timer-val" id="minutes">00</span><span class="timer-label">Mins</span></div>
+                <div class="timer-unit"><span class="timer-val" id="seconds">00</span><span class="timer-label">Secs</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Daily Ritual (New) -->
+    <section class="routine-wrapper">
+        <div class="container">
+            <h2 class="section-title text-center">My Daily Ritual</h2>
+            <div class="routine-toggle">
+                <button class="routine-btn active" onclick="switchRoutine('am', this)">Morning (AM)</button>
+                <button class="routine-btn" onclick="switchRoutine('pm', this)">Evening (PM)</button>
+            </div>
+            <div class="routine-steps" id="routine-steps">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Ingredient Glossary (New) -->
+    <section style="padding: 5rem 0; background: var(--color-bg-card);">
+        <div class="container">
+            <h2 class="section-title text-center" style="margin-bottom: 3rem;">Ingredient Spotlight</h2>
+            <div class="glossary-grid">
+                <div class="ingredient-card">
+                    <div class="ing-name">Hyaluronic Acid <i class="ph-fill ph-drop text-blue-400"></i></div>
+                    <p class="ing-desc">A powerful humectant that draws moisture into the skin, plumping fine lines and providing deep hydration.</p>
+                </div>
+                <div class="ingredient-card">
+                    <div class="ing-name">Niacinamide <i class="ph-fill ph-sparkle text-yellow-400"></i></div>
+                    <p class="ing-desc">Vitamin B3 that refines pores, balances oil production, and improves uneven skin tone.</p>
+                </div>
+                <div class="ingredient-card">
+                    <div class="ing-name">Retinol <i class="ph-fill ph-clock text-purple-400"></i></div>
+                    <p class="ing-desc">The gold standard for anti-aging. It accelerates cell turnover to reduce wrinkles and smooth texture.</p>
+                </div>
+                <div class="ingredient-card">
+                    <div class="ing-name">Vitamin C <i class="ph-fill ph-sun text-orange-400"></i></div>
+                    <p class="ing-desc">A potent antioxidant that brightens complexion, fades dark spots, and protects against pollution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="shop-section">
+        <div class="container">
+            <div class="text-center" style="max-width: 700px; margin: 0 auto 3rem;">
+                <h2 class="section-title">Curated for Your Glow</h2>
+                <p style="color: var(--color-text-muted);">Discover our best-selling essentials, crafted with rare botanicals and clinical actives.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filters">
+                <button class="btn btn-outline active" onclick="filterProducts('all', this)">All Products</button>
+                <button class="btn btn-outline" onclick="filterProducts('Serum', this)">Serums</button>
+                <button class="btn btn-outline" onclick="filterProducts('Moisturizer', this)">Moisturizers</button>
+                <button class="btn btn-outline" onclick="filterProducts('Set', this)">Sets</button>
+            </div>
+
+            <div id="product-grid" class="product-grid">
+                <!-- JS Injection -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Results (Before/After) Section -->
+    <section id="real-results" style="padding: 5rem 0; background: var(--color-bg-card);">
+        <div class="container">
+            <div class="text-center" style="max-width: 700px; margin: 0 auto 3rem;">
+                <h2 class="section-title">Real Results</h2>
+                <p style="color: var(--color-text-muted);">See the transformation in 30 days using our Glow Essentials Kit.</p>
+            </div>
+            
+            <div class="comparison-container" id="comparison-slider">
+                <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=1000&auto=format&fit=crop" class="comp-img comp-img-after" alt="After">
+                <div class="comp-img comp-img-before" id="comp-before">
+                    <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=1000&auto=format&fit=crop" class="comp-img" alt="Before" style="width: 100vw; max-width: 800px;"> <!-- Using ingredient/texture shot as placeholder for before, practically use real photos -->
+                </div>
+                <div class="comp-slider-handle" id="comp-handle">
+                    <i class="ph-bold ph-arrows-left-right"></i>
+                </div>
+                <div class="comp-label label-before">Day 1</div>
+                <div class="comp-label label-after">Day 30</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section style="padding: 5rem 0; background: var(--color-bg);">
+        <div class="container">
+            <h2 class="section-title text-center">Loved by Thousands</h2>
+            <div class="testimonials-wrapper">
+                <div class="testimonial-card">
+                    <div style="color: #fbbf24; display: flex;"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                    <p class="testimonial-text">"I've never used a serum that absorbs this quickly. My skin feels incredibly soft and glowing."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="author-img">
+                        <div>
+                            <h5 style="font-weight: 700;">Sarah Jenkins</h5>
+                            <span style="font-size: 0.8rem; color: var(--color-text-muted);">Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div style="color: #fbbf24; display: flex;"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                    <p class="testimonial-text">"The Midnight Oil is a miracle worker. I wake up looking refreshed every single day."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="User" class="author-img">
+                        <div>
+                            <h5 style="font-weight: 700;">Elena Rodriguez</h5>
+                            <span style="font-size: 0.8rem; color: var(--color-text-muted);">Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div style="color: #fbbf24; display: flex;"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                    <p class="testimonial-text">"Finally, a brand that is truly clean and effective. The packaging is gorgeous too!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="User" class="author-img">
+                        <div>
+                            <h5 style="font-weight: 700;">Michelle Chang</h5>
+                            <span style="font-size: 0.8rem; color: var(--color-text-muted);">Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journal Section -->
+    <section id="journal" style="padding: 5rem 0; background: var(--color-bg-card);">
+        <div class="container">
+            <h2 class="section-title text-center">The Glow Journal</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1571781565023-40f8d475240d?q=80&w=2070&auto=format&fit=crop" alt="Morning Routine" class="blog-img">
+                    <div class="blog-content">
+                        <span class="blog-date">Oct 12, 2024</span>
+                        <h3 class="blog-title">The Perfect 5-Step Morning Routine</h3>
+                        <p style="color: var(--color-text-muted); font-size: 0.9rem;">Start your day right with these essential steps to protect and hydrate your skin.</p>
+                        <a href="#" style="color: var(--color-primary); font-weight: 600; font-size: 0.9rem; display: inline-block; margin-top: 1rem;">Read More <i class="ph-bold ph-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop" alt="Ingredients" class="blog-img">
+                    <div class="blog-content">
+                        <span class="blog-date">Nov 05, 2024</span>
+                        <h3 class="blog-title">Why Vitamin C is a Game Changer</h3>
+                        <p style="color: var(--color-text-muted); font-size: 0.9rem;">Understanding the science behind the most popular brightening ingredient.</p>
+                        <a href="#" style="color: var(--color-primary); font-weight: 600; font-size: 0.9rem; display: inline-block; margin-top: 1rem;">Read More <i class="ph-bold ph-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=1935&auto=format&fit=crop" alt="Self Care" class="blog-img">
+                    <div class="blog-content">
+                        <span class="blog-date">Dec 01, 2024</span>
+                        <h3 class="blog-title">Self-Care Sunday Essentials</h3>
+                        <p style="color: var(--color-text-muted); font-size: 0.9rem;">How to create a spa-like experience at home without breaking the bank.</p>
+                        <a href="#" style="color: var(--color-primary); font-weight: 600; font-size: 0.9rem; display: inline-block; margin-top: 1rem;">Read More <i class="ph-bold ph-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed -->
+    <section>
+        <div class="text-center" style="padding: 3rem 0; background: var(--color-bg);">
+            <i class="ph-fill ph-instagram-logo" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem;">@PureGlowSparkles</h3>
+            <p style="color: var(--color-text-muted);">Tag us to be featured on our feed</p>
+        </div>
+        <div class="insta-grid">
+            <div class="insta-item">
+                <img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?q=80&w=600&auto=format&fit=crop" alt="Insta 1" class="insta-img">
+                <div class="insta-overlay"><i class="ph-fill ph-instagram-logo"></i></div>
+            </div>
+            <div class="insta-item">
+                <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?q=80&w=600&auto=format&fit=crop" alt="Insta 2" class="insta-img">
+                <div class="insta-overlay"><i class="ph-fill ph-instagram-logo"></i></div>
+            </div>
+            <div class="insta-item">
+                <img src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=600&auto=format&fit=crop" alt="Insta 3" class="insta-img">
+                <div class="insta-overlay"><i class="ph-fill ph-instagram-logo"></i></div>
+            </div>
+            <div class="insta-item">
+                <img src="https://images.unsplash.com/photo-1596462502278-27bfdd403348?q=80&w=600&auto=format&fit=crop" alt="Insta 4" class="insta-img">
+                <div class="insta-overlay"><i class="ph-fill ph-instagram-logo"></i></div>
+            </div>
+            <div class="insta-item">
+                <img src="https://images.unsplash.com/photo-1608248597279-f99d160bfbc8?q=80&w=600&auto=format&fit=crop" alt="Insta 5" class="insta-img">
+                <div class="insta-overlay"><i class="ph-fill ph-instagram-logo"></i></div>
+            </div>
+            <div class="insta-item">
+                <img src="https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=600&auto=format&fit=crop" alt="Insta 6" class="insta-img">
+                <div class="insta-overlay"><i class="ph-fill ph-instagram-logo"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section style="padding: 5rem 0; background: var(--color-bg-card);">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section-title text-center">Frequently Asked Questions</h2>
+            <div style="margin-top: 3rem;">
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Are your products suitable for sensitive skin?</span>
+                        <i class="ph ph-caret-down accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes! All our products are dermatologically tested and formulated without harsh chemicals, making them safe for sensitive skin types.</p>
+                    </div>
+                </div>
+                 <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Do you ship internationally?</span>
+                        <i class="ph ph-caret-down accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>We currently ship to over 50 countries worldwide. Shipping times vary depending on location but typically range from 5-10 business days.</p>
+                    </div>
+                </div>
+                 <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>What is your return policy?</span>
+                        <i class="ph ph-caret-down accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>We offer a 30-day money-back guarantee. If you're not satisfied with your purchase, simply return it within 30 days for a full refund.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #111; color: #ccc; padding: 4rem 0 2rem;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; color: white; margin-bottom: 1rem; font-family: var(--font-serif); font-size: 1.25rem;">
+                        <i class="ph-fill ph-sparkle" style="color: var(--color-primary);"></i> Pure Glow.
+                    </div>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">Redefining skincare with nature's finest ingredients.</p>
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="https://wa.me/2348000000000" class="hover:text-white transition"><i class="ph-fill ph-whatsapp-logo"></i></a>
+                        <a href="#" class="hover:text-white transition"><i class="ph-fill ph-instagram-logo"></i></a>
+                        <a href="#" class="hover:text-white transition"><i class="ph-fill ph-facebook-logo"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="color: white; margin-bottom: 1rem;">Shop</h4>
+                    <ul style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><a href="#" class="hover:text-white transition">All Products</a></li>
+                        <li><a href="#" class="hover:text-white transition">Best Sellers</a></li>
+                        <li><a href="#" class="hover:text-white transition">New Arrivals</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: white; margin-bottom: 1rem;">Help</h4>
+                    <ul style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><a href="#" class="hover:text-white transition">Shipping</a></li>
+                        <li><a href="#" class="hover:text-white transition">Returns</a></li>
+                        <li><a href="https://wa.me/2348000000000" class="hover:text-white transition">Contact via WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #333; padding-top: 2rem; display: flex; flex-direction: column; md:flex-row; justify-content: space-between; align-items: center; gap: 1rem; font-size: 0.8rem;">
+                <p>&copy; <span id="year">2025</span> Pure Glow Sparkles. All rights reserved.</p>
+                <div style="display: flex; gap: 1rem; font-size: 1.5rem; color: #666;">
+                    <i class="ph-fill ph-credit-card" title="Visa"></i>
+                    <i class="ph-fill ph-paypal-logo" title="PayPal"></i>
+                    <i class="ph-fill ph-bank" title="Bank Transfer"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="cookie-banner">
+        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">We respect your privacy</h4>
+        <p style="font-size: 0.85rem; color: var(--color-text-muted);">We use cookies to ensure you get the best experience on our website. By continuing to browse, you agree to our use of cookies.</p>
+        <div class="cookie-actions">
+            <button class="btn btn-primary" onclick="acceptCookies()">Accept</button>
+            <button class="btn btn-outline" onclick="acceptCookies()">Decline</button>
+        </div>
+    </div>
+
+    <!-- Scroll to Top -->
+    <button id="scroll-top" class="scroll-top" onclick="window.scrollTo(0,0)"><i class="ph-bold ph-arrow-up"></i></button>
+
+    <!-- Logic -->
+    <script>
+        // --- Data with AI Keywords ---
+        const productsData = [
+            { id: 1, name: "Radiance Vitamin C Serum", type: "Serum", price: 35500, image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1887&auto=format&fit=crop", tag: "Best Seller", rating: 5, aiKeywords: ["brighten", "dull", "glow", "spots", "uneven"] },
+            { id: 2, name: "Midnight Recovery Oil", type: "Oil", price: 42000, image: "2148645516.jpg", tag: "New", rating: 4, aiKeywords: ["dry", "aging", "wrinkles", "night", "repair"] },
+            { id: 3, name: "Rose Quartz Face Roller", type: "Tool", price: 15000, image: "https://images.unsplash.com/photo-1615396899839-c99c121888b0?q=80&w=1887&auto=format&fit=crop", tag: null, rating: 4, aiKeywords: ["puffiness", "tool", "massage", "relax"] },
+            { id: 4, name: "Hydra-Glow Moisturizer", type: "Moisturizer", price: 28500, image: "https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?q=80&w=1886&auto=format&fit=crop", tag: "Trending", rating: 5, aiKeywords: ["dry", "flakey", "hydrate", "daily", "soft"] },
+            { id: 5, name: "Purifying Clay Mask", type: "Mask", price: 22000, image: "image.png", tag: null, rating: 4, aiKeywords: ["oily", "acne", "pores", "blackheads", "detox"] },
+            { id: 6, name: "Silk Peptide Eye Cream", type: "Moisturizer", price: 25000, image: "https://images.unsplash.com/photo-1629198688000-71f23e745b6e?q=80&w=1780&auto=format&fit=crop", tag: null, rating: 4, aiKeywords: ["eyes", "wrinkles", "dark circles", "lines"] },
+            { id: 7, name: "Gentle Foam Cleanser", type: "Cleanser", price: 18500, image: "image2.png", tag: null, rating: 5, aiKeywords: ["clean", "wash", "sensitive", "daily", "makeup"] },
+            { id: 8, name: "Glow Essentials Kit", type: "Set", price: 85000, image: "2148740260.jpg", tag: "Bundle Deal", rating: 5, aiKeywords: ["gift", "set", "routine", "starter"] }
+        ];
+
+        let cart = [];
+        let wishlist = [];
+        let activeCategory = 'all';
+        let searchQuery = '';
+        let shippingCost = 2500; // Default Lagos
+        let quizAnswers = {};
+        const WHATSAPP_NUMBER = "2348000000000"; // Replace with real number
+
+        // --- DOM Elements ---
+        const productGrid = document.getElementById('product-grid');
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const cartOverlay = document.getElementById('cart-overlay');
+        const cartCountBadge = document.getElementById('cart-count');
+        const wishlistCountBadge = document.getElementById('wishlist-count');
+        const toast = document.getElementById('toast');
+        const productModal = document.getElementById('product-modal');
+        const searchInput = document.getElementById('search-input');
+        const themeIcon = document.getElementById('theme-icon');
+        const scrollTopBtn = document.getElementById('scroll-top');
+        const cookieBanner = document.getElementById('cookie-banner');
+        
+        // New Features DOM
+        const quizModal = document.getElementById('quiz-modal');
+        const trackModal = document.getElementById('track-modal');
+        const accountModal = document.getElementById('account-modal');
+        const compContainer = document.getElementById('comparison-slider');
+        const compBefore = document.getElementById('comp-before');
+        const compHandle = document.getElementById('comp-handle');
+        const weatherWidget = document.getElementById('weather-widget');
+
+        // AI Chat Elements
+        const aiChatWidget = document.getElementById('ai-chat');
+        const aiChatBtn = document.querySelector('.ai-chat-btn');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+
+        // --- Init ---
+        function init() {
+            renderProducts(productsData);
+            updateCartUI();
+            updateWishlistUI();
+            initCountdown();
+            checkCookies();
+            initComparisonSlider();
+            initRoutine();
+            initWeather();
+            document.getElementById('year').innerText = new Date().getFullYear();
+            
+            // Search Listener
+            searchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value.toLowerCase();
+                applyFilters();
+            });
+        }
+
+        // --- Logic: Routine Builder ---
+        const routineStepsData = {
+            am: [
+                { name: "Cleanse", icon: "ph-drop", desc: "Remove impurities" },
+                { name: "Tone", icon: "ph-waves", desc: "Balance pH" },
+                { name: "Treat", icon: "ph-sparkle", desc: "Vitamin C Serum" },
+                { name: "Moisturize", icon: "ph-cloud", desc: "Hydra-Glow" },
+                { name: "Protect", icon: "ph-sun", desc: "SPF 50+" }
+            ],
+            pm: [
+                { name: "Double Cleanse", icon: "ph-drop-half-bottom", desc: "Remove Makeup" },
+                { name: "Exfoliate", icon: "ph-star", desc: "2x per week" },
+                { name: "Repair", icon: "ph-moon-stars", desc: "Retinol/Oil" },
+                { name: "Hydrate", icon: "ph-cloud-moon", desc: "Night Cream" }
+            ]
+        };
+
+        function initRoutine() {
+            renderRoutine('am');
+        }
+
+        function switchRoutine(type, btn) {
+            document.querySelectorAll('.routine-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderRoutine(type);
+        }
+
+        function renderRoutine(type) {
+            const container = document.getElementById('routine-steps');
+            const steps = routineStepsData[type];
+            container.innerHTML = steps.map((step, index) => `
+                <div class="routine-step">
+                    <div class="step-number">${index + 1}</div>
+                    <div class="routine-icon"><i class="ph-fill ${step.icon}"></i></div>
+                    <h4 style="font-weight: 700; margin-bottom: 0.2rem;">${step.name}</h4>
+                    <p style="font-size: 0.8rem; color: var(--color-text-muted);">${step.desc}</p>
+                </div>
+            `).join('');
+        }
+
+        // --- Logic: Weather Widget (Mock) ---
+        function initWeather() {
+            // Mock data - in real app, fetch from API based on IP
+            const weather = { temp: 32, condition: 'Sun', location: 'Lagos' };
+            weatherWidget.innerHTML = `<i class="ph-fill ph-sun"></i> <span>${weather.location} ${weather.temp}°C</span>`;
+            
+            // Add tooltip logic or specific AI advice based on this later
+        }
+
+        // --- Logic: Filtering ---
+        function applyFilters() {
+            let filtered = productsData;
+            
+            if (activeCategory !== 'all') {
+                filtered = filtered.filter(p => p.type.includes(activeCategory) || p.name.includes(activeCategory));
+            }
+            
+            if (searchQuery) {
+                filtered = filtered.filter(p => {
+                    const textMatch = p.name.toLowerCase().includes(searchQuery) || p.type.toLowerCase().includes(searchQuery);
+                    const keywordMatch = p.aiKeywords.some(k => k.includes(searchQuery));
+                    return textMatch || keywordMatch;
+                });
+            }
+
+            renderProducts(filtered);
+        }
+
+        function filterProducts(category, btn) {
+            document.querySelectorAll('.filters .btn').forEach(b => b.classList.remove('active'));
+            if(btn) btn.classList.add('active');
+            activeCategory = category;
+            applyFilters();
+        }
+
+        // --- Logic: AI Chatbot ---
+        function toggleAIChat() {
+            aiChatWidget.classList.toggle('active');
+            aiChatBtn.classList.toggle('active');
+        }
+
+        function sendChatMessage() {
+            const text = chatInput.value.trim().toLowerCase();
+            if (!text) return;
+
+            addMessage(chatInput.value, 'user');
+            chatInput.value = '';
+
+            setTimeout(() => {
+                let response = "I'm still learning! Could you describe your skin concern? (e.g., 'acne', 'dryness', 'wrinkles')";
+                let recs = [];
+
+                if (text.includes("dry") || text.includes("hydrate")) {
+                    response = "<b>Dryness:</b> Focus on hydration. Our <b>Hydra-Glow Moisturizer</b> is perfect.";
+                    recs = [4, 2];
+                } else if (text.includes("acne") || text.includes("oil")) {
+                    response = "<b>Acne/Oil:</b> Try our <b>Purifying Clay Mask</b> to detox pores.";
+                    recs = [5, 7];
+                } else if (text.includes("dull") || text.includes("glow")) {
+                    response = "<b>Dullness:</b> Vitamin C is key. Try our <b>Radiance Serum</b>.";
+                    recs = [1, 8];
+                } else if (text.includes("aging")) {
+                    response = "<b>Aging:</b> Peptides help smooth lines. Try the <b>Eye Cream</b>.";
+                    recs = [6, 2];
+                } else if (text.includes("hello")) {
+                    response = "Hi there! I'm Glow AI. How can I help your skin today?";
+                }
+
+                addMessage(response, 'bot');
+                
+                if (recs.length > 0) {
+                    const recContainer = document.createElement('div');
+                    recs.forEach(id => {
+                        const p = productsData.find(prod => prod.id === id);
+                        if (p) {
+                            const recEl = document.createElement('div');
+                            recEl.className = 'product-recommendation';
+                            recEl.innerHTML = `
+                                <img src="${p.image}" alt="${p.name}">
+                                <div>
+                                    <div style="font-size:0.8rem; font-weight:700;">${p.name}</div>
+                                    <div style="font-size:0.7rem; color:var(--color-primary);">₦${p.price.toLocaleString()} - Click to Add</div>
+                                </div>
+                            `;
+                            recEl.onclick = () => addToCart(p.id);
+                            recContainer.appendChild(recEl);
+                        }
+                    });
+                    chatMessages.appendChild(recContainer);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }
+            }, 800);
+        }
+
+        function addMessage(text, sender) {
+            const div = document.createElement('div');
+            div.className = `message msg-${sender}`;
+            div.innerHTML = text;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // --- Logic: Rendering ---
+        function getStars(rating) {
+            let stars = '';
+            for(let i=0; i<5; i++) {
+                stars += i < rating ? '<i class="ph-fill ph-star"></i>' : '<i class="ph ph-star"></i>';
+            }
+            return stars;
+        }
+
+        function renderProducts(list) {
+            if(list.length === 0) {
+                productGrid.innerHTML = `<div class="text-center" style="grid-column: 1/-1; padding: 3rem; color: var(--color-text-muted);">No products found matching your search.</div>`;
+                return;
+            }
+
+            productGrid.innerHTML = list.map(product => {
+                const isWishlisted = wishlist.includes(product.id);
+                return `
+                <div class="product-card">
+                    <div class="product-image-wrapper" onclick="openModal(${product.id})">
+                        ${product.tag ? `<span class="product-tag">${product.tag}</span>` : ''}
+                        <img src="${product.image}" alt="${product.name}" class="product-img">
+                        
+                        <button class="btn-icon-float btn-wishlist-card ${isWishlisted ? 'active' : ''}" onclick="event.stopPropagation(); toggleWishlist(${product.id})">
+                            <i class="ph-${isWishlisted ? 'fill' : 'bold'} ph-heart"></i>
+                        </button>
+                        
+                        <button class="btn-icon-float btn-quick-add" onclick="event.stopPropagation(); addToCart(${product.id})">
+                            <i class="ph-bold ph-plus"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">${product.name}</h3>
+                        <div class="product-rating">${getStars(product.rating)}</div>
+                        <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.5rem;">${product.type}</p>
+                        <div class="product-meta">
+                            <span>₦${product.price.toLocaleString()}</span>
+                        </div>
+                    </div>
+                </div>
+            `}).join('');
+        }
+
+        // --- Logic: Wishlist ---
+        function toggleWishlist(id) {
+            if (wishlist.includes(id)) {
+                wishlist = wishlist.filter(itemId => itemId !== id);
+                showToast("Removed from Wishlist", "heart-break");
+            } else {
+                wishlist.push(id);
+                showToast("Added to Wishlist", "heart");
+            }
+            updateWishlistUI();
+            applyFilters();
+        }
+
+        function updateWishlistUI() {
+            wishlistCountBadge.innerText = wishlist.length;
+            wishlistCountBadge.style.opacity = wishlist.length > 0 ? 1 : 0;
+        }
+
+        // --- Logic: Cart & Shipping ---
+        function addToCart(id) {
+            const product = productsData.find(p => p.id === id);
+            const existing = cart.find(item => item.id === id);
+
+            if (existing) {
+                existing.quantity++;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+
+            updateCartUI();
+            toggleCart(true);
+            showToast(`Added ${product.name}`);
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+        }
+
+        function updateQty(id, change) {
+            const item = cart.find(i => i.id === id);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) removeFromCart(id);
+                else updateCartUI();
+            }
+        }
+
+        function selectShipping(type, cost, el) {
+            shippingCost = cost;
+            document.querySelectorAll('.shipping-option').forEach(opt => opt.classList.remove('selected'));
+            el.classList.add('selected');
+            el.querySelector('input').checked = true;
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cart-items-container');
+            const totalEl = document.getElementById('cart-total');
+            const totalCount = cart.reduce((sum, i) => sum + i.quantity, 0);
+
+            cartCountBadge.innerText = totalCount;
+            cartCountBadge.style.opacity = totalCount > 0 ? 1 : 0;
+
+            const subtotal = cart.reduce((sum, i) => sum + (i.price * i.quantity), 0);
+            const total = subtotal + (cart.length > 0 ? shippingCost : 0);
+            
+            totalEl.innerText = '₦' + total.toLocaleString();
+
+            if (cart.length === 0) {
+                container.innerHTML = `<div class="text-center" style="margin-top: 3rem; color: var(--color-text-muted);">Your bag is empty.</div>`;
+            } else {
+                container.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <img src="${item.image}" class="cart-item-img" alt="${item.name}">
+                        <div class="cart-item-info">
+                            <h4 class="cart-item-title">${item.name}</h4>
+                            <p style="color: var(--color-text-muted); font-size: 0.85rem;">₦${item.price.toLocaleString()}</p>
+                            <div class="cart-controls">
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="updateQty(${item.id}, -1)">-</button>
+                                    <span class="qty-val">${item.quantity}</span>
+                                    <button class="qty-btn" onclick="updateQty(${item.id}, 1)">+</button>
+                                </div>
+                                <button onclick="removeFromCart(${item.id})" style="color: var(--color-primary); font-size: 0.8rem; text-decoration: underline;">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function toggleCart(forceOpen = false) {
+            const isOpen = cartSidebar.classList.contains('active');
+            if (isOpen && !forceOpen) {
+                cartSidebar.classList.remove('active');
+                cartOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            } else {
+                cartSidebar.classList.add('active');
+                cartOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // --- Logic: WhatsApp Checkout ---
+        function checkout() {
+            if(cart.length === 0) {
+                showToast("Your cart is empty!", "warning-circle");
+                return;
+            }
+
+            const subtotal = cart.reduce((sum, i) => sum + (i.price * i.quantity), 0);
+            const total = subtotal + shippingCost;
+            
+            let message = "Hello Pure Glow! I would like to place an order:%0A%0A";
+            
+            cart.forEach(item => {
+                message += `▪️ ${item.name} (x${item.quantity}) - ₦${(item.price * item.quantity).toLocaleString()}%0A`;
+            });
+
+            message += `%0A📦 Shipping: ${shippingCost === 2500 ? "Lagos Delivery (₦2,500)" : "Nationwide Shipping (₦4,500)"}`;
+            message += `%0A💰 *Total: ₦${total.toLocaleString()}*`;
+            message += "%0A%0APlease confirm my order.";
+
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
+        }
+
+        // --- Logic: Quiz ---
+        function openQuiz() { quizModal.classList.add('active'); }
+        
+        function handleQuizAnswer(step, answer) {
+            quizAnswers[step] = answer;
+            document.getElementById(`quiz-step-${step}`).classList.remove('active');
+            if (step < 2) {
+                document.getElementById(`quiz-step-${step+1}`).classList.add('active');
+            } else {
+                document.getElementById('quiz-step-result').classList.add('active');
+            }
+        }
+
+        function applyQuizFilter() {
+            closeModal('quiz-modal');
+            const concern = quizAnswers[1];
+            // Scroll to shop
+            document.getElementById('products').scrollIntoView();
+            
+            // Map answers to categories/keywords
+            if(concern === 'dry') { filterProducts('Moisturizer'); }
+            else if(concern === 'acne') { filterProducts('Mask'); }
+            else if(concern === 'aging') { filterProducts('Oil'); }
+            else if(concern === 'dull') { filterProducts('Serum'); }
+            
+            showToast("Showing personalized recommendations", "sparkle");
+        }
+
+        // --- Logic: Tracking & Account ---
+        function openTrackOrder() { trackModal.classList.add('active'); }
+        function showTrackingStatus() { document.getElementById('tracking-result').style.display = 'block'; }
+        
+        function openAccount() { accountModal.classList.add('active'); }
+
+        // --- Logic: Comparison Slider ---
+        function initComparisonSlider() {
+            let active = false;
+            
+            const slide = (x) => {
+                let rect = compContainer.getBoundingClientRect();
+                let xPos = x - rect.left;
+                if(xPos < 0) xPos = 0;
+                if(xPos > rect.width) xPos = rect.width;
+                
+                compBefore.style.width = xPos + "px";
+                compHandle.style.left = xPos + "px";
+            };
+
+            compContainer.addEventListener('mousedown', () => active = true);
+            compContainer.addEventListener('touchstart', () => active = true);
+            
+            window.addEventListener('mouseup', () => active = false);
+            window.addEventListener('touchend', () => active = false);
+            
+            window.addEventListener('mousemove', (e) => { if(active) slide(e.pageX); });
+            window.addEventListener('touchmove', (e) => { if(active) slide(e.touches[0].pageX); });
+        }
+
+        // --- Logic: General ---
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            body.setAttribute('data-theme', newTheme);
+            themeIcon.className = newTheme === 'light' ? 'ph ph-moon' : 'ph ph-sun';
+            showToast(`Switched to ${newTheme} mode`, newTheme === 'light' ? 'sun' : 'moon-stars');
+        }
+
+        function toggleAccordion(btn) {
+            const item = btn.parentElement;
+            const content = item.querySelector('.accordion-content');
+            const isActive = item.classList.contains('active');
+            document.querySelectorAll('.accordion-item.active').forEach(activeItem => {
+                if(activeItem !== item) {
+                    activeItem.classList.remove('active');
+                    activeItem.querySelector('.accordion-content').style.maxHeight = null;
+                }
+            });
+            if (isActive) {
+                item.classList.remove('active');
+                content.style.maxHeight = null;
+            } else {
+                item.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
+
+        function initCountdown() {
+            const countDownDate = new Date().getTime() + (24 * 60 * 60 * 1000); 
+            const x = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = countDownDate - now;
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+                document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+                document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+                document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+                if (distance < 0) { clearInterval(x); document.getElementById("flash-timer").innerHTML = "EXPIRED"; }
+            }, 1000);
+        }
+
+        function checkCookies() {
+            if (!localStorage.getItem('cookiesAccepted')) {
+                setTimeout(() => { cookieBanner.classList.add('show'); }, 2000);
+            }
+        }
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            cookieBanner.classList.remove('show');
+        }
+
+        function openModal(id) {
+            const product = productsData.find(p => p.id === id);
+            const isWishlisted = wishlist.includes(id);
+            document.getElementById('modal-img-container').innerHTML = `<img src="${product.image}" class="modal-img">`;
+            document.getElementById('modal-title').innerText = product.name;
+            document.getElementById('modal-rating').innerHTML = getStars(product.rating);
+            document.getElementById('modal-price').innerText = `₦${product.price.toLocaleString()}`;
+            document.getElementById('modal-tag').innerText = product.type;
+            
+            const addBtn = document.getElementById('modal-add-btn');
+            addBtn.onclick = () => { addToCart(product.id); closeModal('product-modal'); };
+            const wishBtn = document.getElementById('modal-wishlist-btn');
+            wishBtn.innerHTML = isWishlisted ? '<i class="ph-fill ph-heart"></i> Saved' : '<i class="ph ph-heart"></i> Wishlist';
+            wishBtn.classList.toggle('active', isWishlisted);
+            wishBtn.onclick = () => { toggleWishlist(product.id); closeModal('product-modal'); };
+            productModal.classList.add('active');
+        }
+
+        function closeModal(modalId) { document.getElementById(modalId).classList.remove('active'); }
+
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
+        });
+
+        let toastTimer;
+        function showToast(msg, icon="check-circle") {
+            const t = document.getElementById('toast');
+            t.innerHTML = `<i class="ph-fill ph-${icon}" style="color: var(--color-primary); font-size: 1.5rem;"></i><div><h4 style="font-weight: 700; font-size: 0.9rem;">Notification</h4><p style="font-size: 0.8rem; color: var(--color-text-muted);">${msg}</p></div>`;
+            t.classList.add('active');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => t.classList.remove('active'), 3000);
+        }
+
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => { document.getElementById('nav-links').classList.toggle('active'); });
+
+        window.addEventListener('scroll', () => {
+            if(window.scrollY > 50) { document.getElementById('navbar').classList.add('scrolled'); }
+            else { document.getElementById('navbar').classList.remove('scrolled'); }
+            if(window.scrollY > 300) { scrollTopBtn.classList.add('show'); }
+            else { scrollTopBtn.classList.remove('show'); }
+        });
+
+        // --- Security Measures ---
+        document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S' || e.key === 'i' || e.key === 'I' || e.key === 'j' || e.key === 'J' || e.key === 'c' || e.key === 'C')) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.key === 'F12') {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        init();
+    </script>
+</body>
+</html>
